@@ -1,0 +1,24 @@
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		meta(content="user-scalable=no, width=device-width", name="viewport")
+		title
+			if file.title
+				| #{file.title} | #{site.title}
+			else
+				| #{site.title}
+		link(rel="stylesheet", href=asset("blog.min.css"))
+		//if lt IE 9
+			script(src=asset("ie-js/html5.js"))
+			script(src=asset("ie-js/respond.min.js"))
+			script(src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js")
+	body
+		+b.test-block: +i({ title: 'Some title' })
+
+		aside.left
+			= site.title
+		!= content
+		script(src=asset("blog.min.js"))
+		if env == "dev"
+			+b.debug-bootstrap-grid: +i

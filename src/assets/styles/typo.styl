@@ -1,0 +1,127 @@
+a
+	cursor pointer
+	transition color 0.2s ease
+	outline 0 none !important
+	&:focus
+		text-decoration none !important
+	&.dotted
+		text-decoration none
+		span
+			border-bottom 1px dotted
+		&:hover
+			text-decoration none
+			span
+				border-bottom 1px dotted inherit
+
+ol
+	padding 0
+	margin 0 0 25px
+	list-style none
+	counter-reset list1
+	li
+		position relative
+		padding-left 30px
+		margin-bottom 10px
+		&:before
+			content ""
+			position absolute
+			left 0
+			top 0
+			width 25px
+			height 24px
+			text-align right
+			white-space nowrap
+			counter-increment list1
+			content: counter(list1) ". "
+	ol
+		padding 10px 0 0
+		counter-reset list2
+		li:before
+			counter-increment list2
+			content: counter(list1) "." counter(list2) ". "
+		ol
+			padding 10px 0 0
+			counter-reset list3
+			li
+				padding-left 45px
+				&:before
+					width 40px
+					counter-increment list3
+					content: counter(list1) "." counter(list2) "." counter(list3) ". "
+
+textarea
+	resize vertical
+
+hr
+	margin 15px 0
+	clearfix()
+
+p, ol, table
+	font-size 16px
+	line-height 1.5
+	color #333
+	@media phone
+		font-size 14px
+
+p
+	margin-bottom 10px
+
+h1, h2, .h1, .h2
+	text-transform uppercase
+
+h1, .h1
+	font-size 45px
+	line-height 54px
+	letter-spacing -0.1pt
+	margin 20px 0
+	font-weight 400
+	&.font-light
+		letter-spacing 1pt
+	small
+		font-size 53%
+	@media phone
+		font-size 30px
+		line-height 40px
+
+h2, .h2
+	font-size 30px
+	line-height 32px
+	margin 0 0 20px
+	@media phone
+		font-size 26px
+
+h3, .h3
+	font-size 24px
+	line-height 28px
+	margin 0 0 15px
+
+h4, h5, .h4, .h5
+	font-weight bold
+
+h4, .h4
+	font-size 20px
+	line-height 24px
+	margin 0 0 15px
+
+h5, .h5
+	font-size 16px
+	line-height 20px
+	margin 0 0 15px
+
+table
+	width 100%
+	margin-bottom 20px
+	tr
+		th, td
+			padding 8px 0
+			vertical-align top
+			@media phone
+				padding 8px 2px
+		th
+			border-bottom 1px dotted #8b9fc0
+		td
+			border-top 1px dotted #8b9fc0
+		&:first-child
+			td
+				border-top 0 none
+
